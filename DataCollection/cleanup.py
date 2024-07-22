@@ -1,5 +1,5 @@
 data=[]
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalListExcel.csv", "r") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/finalListExcel.csv", "r") as temp:
     for line in temp:
         if ("INVOLUNTARY DISSOLUTION" in line):
             continue
@@ -15,7 +15,7 @@ with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalListExc
         data.append(line)
     temp.close()
 
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalListExcel.csv", "w") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/finalListExcel.csv", "w") as temp:
     for i in data:
         temp.write(i)
     temp.close()

@@ -1,10 +1,10 @@
-file = open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/CDB29AJ-Condominium-List.TXT", "r")
+file = open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/CDB29AJ-Condominium-List.TXT", "r")
 
 directions = ["NORTH", "EAST", "SOUTH", "WEST", "N.", "E.", "S.", "W.", "N", "E", "S", "W"]
 positions = ["PRESIDENT", "TREASURER", "DIRECTOR", "SECRETARY"]
 suff = ["AVE", "RD", "CT", "BLVD", "ST", "DR", "HWY", "PL", "PKWY", "LN", "WAY", "TER", "TRL", "CIR", "WALK", "SQ", "PKY", "PLZ", "PARK", "STREET"]
 city_names = []
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/Cities.txt") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/Cities.txt") as temp:
     for line in temp:
         bnd=len(line)
         if (line[-1]=='\n'):
@@ -12,7 +12,7 @@ with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/Cities.txt")
         city_names.append(line[:bnd])
     temp.close()
 str_names = []
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/Street_Names.txt") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/Street_Names.txt") as temp:
     for line in temp:
         bnd=len(line)
         if (line[-1]=='\n'):
@@ -81,7 +81,7 @@ for line in file:
     data.append(info)
     cnt+=1
 file.close()
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/data.txt", "w") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/data.txt", "w") as temp:
     for info in data:
         for s in label:
             temp.write(s+": "+info[s]+'\n')

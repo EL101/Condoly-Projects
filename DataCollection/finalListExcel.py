@@ -3,19 +3,19 @@ from pprint import pprint
 positions = ["PRESIDENT", "TREASURER", "DIRECTOR", "SECRETARY"]
 label=["Association Name", "# of Units", "Board Title", "Full Name", "Address", "City", "State", "Zip"]
 cities=[]
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/Cities.txt", "r") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/Cities.txt", "r") as temp:
     for line in temp:
         cities.append(line[:-1])
     temp.close()
 omit=[]
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/omit.txt", "r") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/omit.txt", "r") as temp:
     for line in temp:
         omit.append(line[:-1].upper())
     temp.close()
 for i in omit:
     print(i)
 data=[]
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalList.txt", "r") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/finalList.txt", "r") as temp:
     info={}
     cnt=0
     skip=False
@@ -99,7 +99,7 @@ with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalList.tx
                     info["# of Units"]=curr[1]
     temp.close()
 # pprint(data)
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalListExcel.csv", "w") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/finalListExcel.csv", "w") as temp:
     for i in range(len(label)):
         if (i==len(label)-1):
             temp.write(label[i]+"\n")

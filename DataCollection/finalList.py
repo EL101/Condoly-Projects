@@ -1,7 +1,7 @@
 from pprint import pprint
 
 def readData(file, data):
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/"+file, "r") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/"+file, "r") as temp:
         curr={}
         for line in temp:
             L=line[:-1].split(": ")
@@ -17,7 +17,7 @@ matches=[]
 readData("matches.txt", matches)
 def matchOriginal(data):
     original=[]
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/CDB29AJ-Condominium-List.TXT", "r") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/CDB29AJ-Condominium-List.TXT", "r") as temp:
         block=[]
         for line in temp:
             curr=line[:-1].split()
@@ -54,7 +54,7 @@ def matchOriginal(data):
             original.remove(rem)
     return finalList
 def writeOut(data):
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalList.txt", "w") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/finalList.txt", "w") as temp:
         for s in data:
             for line in s:
                 temp.write(line+"\n")
@@ -62,19 +62,19 @@ def writeOut(data):
 writeOut(matchOriginal(matches))
 def cleanData():
     info=""
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalList.txt", "r") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/finalList.txt", "r") as temp:
         for line in temp:
             if ("OD 40223 C O N D O M I N I U M D I R E C T O R L I S T PAGE" in line or "1 CDB29A S E C R E T A R Y O F S T A T E RUN DATE 6/12/24" in line):
                 continue
             else:
                 info+=line
         temp.close()
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalList.txt", "w") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/finalList.txt", "w") as temp:
         temp.write(info)
 cleanData()
 def compareData():
     currFinal=[]
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/finalList.txt", "r") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/finalList.txt", "r") as temp:
         block=[]
         for line in temp:
             curr=line[:-1].split()
@@ -88,7 +88,7 @@ def compareData():
             currFinal.append(block)
         temp.close()
     prevFinal=[]
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/prevfinalList.txt", "r") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/prevfinalList.txt", "r") as temp:
         block=[]
         for line in temp:
             curr=line[:-1].split()
@@ -105,7 +105,7 @@ def compareData():
     for block in prevFinal:
         if (not(block in currFinal)):
             rem.append(block)
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/removed.txt", "w") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/removed.txt", "w") as temp:
         for block in rem:
             for line in block:
                 temp.write(line)

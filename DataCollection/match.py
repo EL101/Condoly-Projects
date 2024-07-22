@@ -1,7 +1,7 @@
 data1=[]
 data2=[]
 def readData(file, data):
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/"+file, "r") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/"+file, "r") as temp:
         curr={}
         for line in temp:
             L=line[:-1].split(": ")
@@ -38,7 +38,7 @@ def findMatch():
             data2.remove(data2[ind])
     return matches
 def writeOut(matches):
-    with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/matches.txt", "w") as temp:
+    with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/matches.txt", "w") as temp:
         for info in matches:
             for i in info.keys():
                 temp.write(i+": "+info[i]+"\n")

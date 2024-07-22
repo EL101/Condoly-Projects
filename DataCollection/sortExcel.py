@@ -1,7 +1,7 @@
 label=["POSITION", "DIR", "STR_NAME", "(STR_SUFF)", "CITY_NAME", "ZIPCODE", "UNITS"]
 index=[-1, 7, 8, 9, 10, 11, 2]
 data=[]
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/excelCondos.txt", "r") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/excelCondos.txt", "r") as temp:
     for line in temp:
         curr=line[:-1].split(',')
         info={}
@@ -15,7 +15,7 @@ with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/excelCondos.
                     info[label[i]]=curr[index[i]]
         data.append(info)
     temp.close()
-with open("C:/Users/yhk13/OneDrive/Documents/Condoly/DataCollection/data_excel.txt", "w") as temp:
+with open("C:/Users/yhk13/OneDrive/Documents/Condoly-Projects/DataCollection/data_excel.txt", "w") as temp:
     for info in data:
         for s in label:
             temp.write(s+": "+info[s]+"\n")
